@@ -14,6 +14,8 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import lombok.Getter;
 import lombok.Setter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author : hqqich
@@ -25,6 +27,9 @@ public class JsonUtils {
 
     private JsonUtils() {
     }
+
+    private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);
+
 
     public static final ObjectMapper MAPPER = new ObjectMapper();
 
@@ -77,7 +82,7 @@ public class JsonUtils {
 
     public static void printJson(Object o) {
         try {
-            System.out.println(MAPPER.writeValueAsString(o));
+            logger.info("json: {}", MAPPER.writeValueAsString(o));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

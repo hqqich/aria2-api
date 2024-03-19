@@ -84,6 +84,35 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- ===绑定到logger=== -->
+    <!-- 日志门面 -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.9</version>
+    </dependency>
+
+    <!-- 日志实现,范围设置为test -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-access</artifactId>
+      <version>1.4.8</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.8</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.4.8</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- ===END=== -->
+
   </dependencies>
 
   <!-- 发布到本地路径 -->

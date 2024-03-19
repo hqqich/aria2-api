@@ -20,6 +20,8 @@ import me.hqqich.aria2.utils.JsonUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by chenhao on 2024/3/18 is 18:16.<p/>
@@ -30,6 +32,8 @@ import org.junit.jupiter.api.Test;
 class MyTest {
 
     public static final Aria2Api API = new Aria2Api(new Aria2Client());
+
+    private static final Logger logger = LoggerFactory.getLogger(MyTest.class);
 
     // ===============================
     public static final String DIR = "d:/aria2-api/";
@@ -154,5 +158,14 @@ class MyTest {
 
     }
 
+    @Test
+    @DisplayName("查看当前运行速度")
+    void testGetUserAgent() {
+
+        // 1、 创建客户端,也可以使用另一个构造函数, 指定OkHttp客户端, Aria2地址, 密码
+        final Aria2Client client = new Aria2Client();
+
+        logger.info("a = {}", "test");
+    }
 
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://logback.qos.ch/manual/appenders.html 官网 -->
+<configuration scan="true">
+  <contextName>test</contextName>
+  <property name="LOGPATH" value="./logs" />
+  <property name="AppName" value="current" />
+  <!-- 输出到控制台 -->
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>
+        [%date{yyyy-MM-dd HH:mm:ss.SSS}] %X{logthreadId} %-5level %logger{80} %method %line - %msg%n
+      </pattern>
+    </layout>
+  </appender>
+  <!-- 输出到文件 -->
+  <appender name="fileLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 设置按尺寸和时间（同时满足）分割 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- 文件名规范 -->
+      <fileNamePattern>${LOGPATH}/${AppName}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <!-- each file should be at most 10MB, keep 30 days worth of history,
+        but at most 3GB -->
+      <maxFileSize>10MB</maxFileSize>
+      <maxHistory>30</maxHistory>
+      <totalSizeCap>3GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}-%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    　　　　　　　　　　　　
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      　　　　　　　　　　　　　　
+      <fileNamePattern>${appLogPath}/%d{yyyy-MM-dd,aux}/logFile.%d{yyyy-MM-dd_HH}.log</fileNamePattern>
+      　　　　　　　　　　　　　　
+      <maxHistory>30</maxHistory>
+      　　　　　　　　　　　　
+    </rollingPolicy>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>INFO</level>
+      <level>ERROR</level>
+    </filter>
+    <encoder>
+      <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}][%-5level]-[%thread][requestId:%X{requestId}][imei:%X{imei}][%logger][username:%X{userName}]-%msg
+        %rootException %n</pattern>
+    </encoder>
+    　　　　　　　　　　
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="fileLog" />
+    <appender-ref ref="stdout"  />
+  </root>
+</configuration>

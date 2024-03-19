@@ -39,3 +39,4 @@ build/
 Test.java
 /.idea/
 /bank.md
+/logs/
