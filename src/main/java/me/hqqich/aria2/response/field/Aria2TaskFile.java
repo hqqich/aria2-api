@@ -12,17 +12,17 @@ import lombok.Setter;
 @Setter
 public class Aria2TaskFile {
 
-	String path;
-	Long completedLength;
-	Long length;
-	Integer index;
-	Boolean selected;
-	List<Uri> uris;
+    String path;
+    Long completedLength;
+    Long length;
+    Integer index;
+    Boolean selected;
+    List<Uri> uris;
 
-	@Data
-	public static class Uri {
+    @Data
+    public static class Uri {
 
-		String uri;
-		String status;
-	}
+        String uri;
+        String status;
+    }
 }

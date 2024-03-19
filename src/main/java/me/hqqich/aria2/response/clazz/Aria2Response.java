@@ -10,7 +10,7 @@ import lombok.Getter;
 @Getter
 public class Aria2Response<T> {
 
-	String id;
-	String jsonrpc;
-	T result;
+    String id;
+    String jsonrpc;
+    T result;
 }

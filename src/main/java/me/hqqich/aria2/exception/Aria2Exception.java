@@ -12,18 +12,16 @@ import lombok.Setter;
 @Setter
 public class Aria2Exception extends Exception {
 
-	int code;
+    int code;
 
-	/**
-	 * Constructs a new exception with the specified detail message.  The cause is not initialized,
-	 * and may subsequently be initialized by a call to {@link #initCause}.
-	 *
-	 * @param message the detail message. The detail message is saved for later retrieval by the
-	 *                {@link #getMessage()} method.
-	 */
-	public Aria2Exception(int code, String message) {
-		super(message);
-		this.code = code;
-	}
+    /**
+     * Constructs a new exception with the specified detail message.  The cause is not initialized, and may subsequently be initialized by a call to {@link #initCause}.
+     *
+     * @param message the detail message. The detail message is saved for later retrieval by the {@link #getMessage()} method.
+     */
+    public Aria2Exception(int code, String message) {
+        super(message);
+        this.code = code;
+    }
 
 }

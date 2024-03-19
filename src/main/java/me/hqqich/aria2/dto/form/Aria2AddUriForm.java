@@ -18,14 +18,14 @@ import me.hqqich.aria2.response.clazz.Aria2Response;
 @Getter
 public class Aria2AddUriForm {
 
-	final Collection<String> urls;
-	final Aria2Option params;
+    final Collection<String> urls;
+    final Aria2Option params;
 
-	public Aria2Param buildParam() {
-		return new Aria2Param(Aria2Method.addUri, urls, params);
-	}
+    public Aria2Param buildParam() {
+        return new Aria2Param(Aria2Method.addUri, urls, params);
+    }
 
-	public static class Response extends Aria2Response<List<List<String>>> {
+    public static class Response extends Aria2Response<List<List<String>>> {
 
-	}
-}   
+    }
+}

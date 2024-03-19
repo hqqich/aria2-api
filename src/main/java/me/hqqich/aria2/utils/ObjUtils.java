@@ -7,7 +7,10 @@ package me.hqqich.aria2.utils;
  */
 public class ObjUtils {
 
-	public static boolean isEmpty(Object o) {
-		return o == null || "".equals(o);
-	}
-}   
+    private ObjUtils() {
+    }
+
+    public static boolean isEmpty(Object o) {
+        return o == null || "".equals(o);
+    }
+}

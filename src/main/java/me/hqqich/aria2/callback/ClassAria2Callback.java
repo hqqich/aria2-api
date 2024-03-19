@@ -14,18 +14,18 @@ import org.jetbrains.annotations.Nullable;
 @Setter
 public abstract class ClassAria2Callback<T> extends AbstractAria2Callback {
 
-	Class<? extends Aria2Response<T>> eClass;
+    Class<? extends Aria2Response<T>> eClass;
 
-	@Override
-	public final void onSuccess(@NotNull String body) {
-		final Aria2Response<T> response = JsonUtils.parse(body, eClass);
-		onSuccess(response == null ? null : response.getResult());
-	}
+    @Override
+    public final void onSuccess(@NotNull String body) {
+        final Aria2Response<T> response = JsonUtils.parse(body, eClass);
+        onSuccess(response == null ? null : response.getResult());
+    }
 
-	/**
-	 * 执行成功回调
-	 *
-	 * @param res 响应对象
-	 */
-	abstract public void onSuccess(@Nullable T res);
+    /**
+     * 执行成功回调
+     *
+     * @param res 响应对象
+     */
+    abstract public void onSuccess(@Nullable T res);
 }

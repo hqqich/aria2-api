@@ -12,10 +12,10 @@ import me.hqqich.aria2.response.clazz.Aria2Response;
 @Setter
 public class Aria2Version {
 
-	List<String> enabledFeatures;
-	String version;
+    List<String> enabledFeatures;
+    String version;
 
-	public static class Response extends Aria2Response<Aria2Version> {
+    public static class Response extends Aria2Response<Aria2Version> {
 
-	}
+    }
 }

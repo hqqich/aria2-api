@@ -7,10 +7,10 @@ package me.hqqich.aria2.enums;
  */
 @SuppressWarnings("AlibabaEnumConstantsMustHaveComment")
 public enum TaskStatus {
-	complete,
-	paused,
-	waiting,
-	active,
-	error,
-	removed,
+    complete,
+    paused,
+    waiting,
+    active,
+    error,
+    removed,
 }

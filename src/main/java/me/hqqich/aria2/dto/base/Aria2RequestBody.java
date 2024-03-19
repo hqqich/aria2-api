@@ -13,18 +13,18 @@ import lombok.Getter;
 @Getter
 public class Aria2RequestBody {
 
-	@JsonSerialize(using = ToStringSerializer.class)
-	final int id;
-	@JsonSerialize(using = ToStringSerializer.class)
-	final double jsonrpc = 2.0;
-	final String method;
-	final List<Object> params;
+    @JsonSerialize(using = ToStringSerializer.class)
+    final int id;
+    @JsonSerialize(using = ToStringSerializer.class)
+    final double jsonrpc = 2.0;
+    final String method;
+    final List<Object> params;
 
-	public Aria2RequestBody(int id, String method, List<Object> params) {
-		this.id = id;
-		this.method = method;
-		this.params = params;
-	}
+    public Aria2RequestBody(int id, String method, List<Object> params) {
+        this.id = id;
+        this.method = method;
+        this.params = params;
+    }
 
 
 }
