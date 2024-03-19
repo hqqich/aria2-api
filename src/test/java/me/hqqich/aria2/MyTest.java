@@ -52,7 +52,7 @@ class MyTest {
 
     private static void testRetry() throws IOException, Aria2RequestException {
         final List<Aria2TaskStatus> tasks = API.tellStop(1, 10).sync();
-        if (tasks.size() > 0) {
+        if (!tasks.isEmpty()) {
             System.out.println(API.retry(tasks.get(0).getGid()));
         }
     }
