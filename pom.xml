@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>me.hqqich.aria2</groupId>
@@ -86,7 +86,7 @@
 
   </dependencies>
 
-  <!--    发布到本地路径 -->
+  <!-- 发布到本地路径 -->
   <distributionManagement>
     <repository>
       <id>local-repo-release</id>
@@ -97,6 +97,7 @@
 
   <build>
     <plugins>
+      <!-- 编译插件 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -106,7 +107,7 @@
           <target>8</target>
         </configuration>
       </plugin>
-      <!--                生成源码的插件-->
+      <!-- 生成源码的插件 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
@@ -121,24 +122,24 @@
           </execution>
         </executions>
       </plugin>
-      <!--                生成javadoc的插件-->
-      <!--            <plugin>-->
-      <!--                <groupId>org.apache.maven.plugins</groupId>-->
-      <!--                <artifactId>maven-javadoc-plugin</artifactId>-->
-      <!--                <version>3.4.1</version>-->
-      <!--                <executions>-->
-      <!--                    <execution>-->
-      <!--                        <id>attach-javadocs</id>-->
-      <!--                        <phase>package</phase>-->
-      <!--                        <goals>-->
-      <!--                            <goal>jar</goal>-->
-      <!--                        </goals>-->
-      <!--                        <configuration>-->
-      <!--                            <additionalJOption>-Xdoclint:none</additionalJOption>-->
-      <!--                        </configuration>-->
-      <!--                    </execution>-->
-      <!--                </executions>-->
-      <!--            </plugin>-->
+      <!-- 生成javadoc的插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.4.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <additionalJOption>-Xdoclint:none</additionalJOption>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
