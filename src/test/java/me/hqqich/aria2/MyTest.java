@@ -14,6 +14,7 @@ import me.hqqich.aria2.exception.Aria2RequestException;
 import me.hqqich.aria2.main.Aria2Api;
 import me.hqqich.aria2.main.Aria2Client;
 import me.hqqich.aria2.response.result.Aria2GlobalOption;
+import me.hqqich.aria2.response.result.Aria2GlobalStatus;
 import me.hqqich.aria2.response.result.Aria2TaskStatus;
 import me.hqqich.aria2.response.result.Aria2Version;
 import me.hqqich.aria2.utils.JsonUtils;
@@ -160,12 +161,21 @@ class MyTest {
 
     @Test
     @DisplayName("查看当前运行速度")
+    @SneakyThrows
     void testGetUserAgent() {
 
         // 1、 创建客户端,也可以使用另一个构造函数, 指定OkHttp客户端, Aria2地址, 密码
         final Aria2Client client = new Aria2Client();
 
-        logger.info("a = {}", "test");
+
+        client.setPrintParam(true);
+
+        Aria2Api aria2Api = new Aria2Api(client);
+
+        Aria2MethodCall<Aria2GlobalStatus> globalStat = aria2Api.getGlobalStat();
+
+        JsonUtils.printJson(globalStat.sync());
+
     }
 
 }
