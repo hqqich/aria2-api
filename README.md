@@ -21,7 +21,7 @@
     <dependency>
       <groupId>me.hqqich.aria2</groupId>
       <artifactId>aria2-api</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.3</version>
     </dependency>
   </dependencies>
 </project>

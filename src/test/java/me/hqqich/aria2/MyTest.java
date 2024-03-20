@@ -160,7 +160,7 @@ class MyTest {
     }
 
     @Test
-    @DisplayName("查看当前运行速度")
+    @DisplayName("查看全局")
     @SneakyThrows
     void testGetUserAgent() {
 
